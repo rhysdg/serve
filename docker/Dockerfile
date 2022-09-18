@@ -106,10 +106,6 @@ RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh \
 COPY config.properties /home/model-server/config.properties
 RUN mkdir /home/model-server/model-store && chown -R model-server /home/model-server/model-store
 
-EXPOSE 8080 8081 8082 7070 7071
-
 USER model-server
 WORKDIR /home/model-server
 ENV TEMP=/home/model-server/tmp
-ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
-CMD ["serve"]
